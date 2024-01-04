@@ -18,5 +18,5 @@ if __name__ == "__main__":
     elif operator == '/':
         print(f"{a} {operator} {b} = {div(a, b)}")
     else:
-        print("Unknown operator. Available operator: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
