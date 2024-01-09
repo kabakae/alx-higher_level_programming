@@ -8,7 +8,7 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     operator = argv[2]
-    b =int(argv[3])
+    b = int(argv[3])
     if operator == '+':
         print(f"{a} {operator} {b} = {add(a, b)}")
     elif operator == '-':
