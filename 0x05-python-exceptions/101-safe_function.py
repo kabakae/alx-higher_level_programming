@@ -2,7 +2,6 @@
 import sys
 
 
-
 def safe_function(fct, *args):
     try:
         num = fct(*args)
@@ -10,4 +9,3 @@ def safe_function(fct, *args):
     except Exception as err:
         print("Exception: {}".format(err), file=sys.stderr)
         return None
-
