@@ -8,7 +8,6 @@ class Square:
 
     def __init__(self, size):
         """initilaize new square.
-
         Args:
             size (int): The size of the new square.
         """
@@ -26,14 +25,15 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
     def area(self):
-            """Return the current area of the square"""
-            return (self.__size *self.__size)
+        """Return the current area of the square"""
+        return (self.__size * self.__size)
 
     def my_print(self):
-            """print the square with the # character."""
-      for i in range(0, self.__size):
-       [print("#", end="") for j in range(self.__size)]
-       print("")
-      if self.__size == 0:
-         print("")
+        """print the square with the # character."""
+        for i in range(0, self.__size):
+            [print("#", end="") for j in range(self.__size)]
+            print("")
+        if self.__size == 0:
+            print("")
