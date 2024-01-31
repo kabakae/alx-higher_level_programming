@@ -6,7 +6,6 @@
 class Rectagle:
     """Represent a rectagle."""
 
-
     def __init__(self, width=0, height=0):
         """Intialize a new Rectagle.
         Args:
