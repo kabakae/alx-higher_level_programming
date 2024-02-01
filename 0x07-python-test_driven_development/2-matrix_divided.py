@@ -6,7 +6,7 @@ def matrix_divided(matrix, div):
     """Divide all elements of a matrix.
     """
     if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for now in matrix) or
+            not all(isinstance(row, list) for row in matrix) or
 
             not all((isinstance(ele, int) or isinstance(ele, float))
                     for ele in [num for row in matrix for num in row])):
