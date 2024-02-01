@@ -4,7 +4,6 @@
 """Defines a square-printing function."""
 
 
-
 def print_square(size):
     """Print a square with # character.
     Args:
