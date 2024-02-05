@@ -5,4 +5,3 @@
 def lookup(obj):
     """Return a list of an object's."""
     return (dir(obj))
-
