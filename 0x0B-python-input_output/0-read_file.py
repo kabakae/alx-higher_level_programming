@@ -5,4 +5,4 @@
 def read_file(filename=""):
     """Print the contents of UF8 TO STDOUT."""
     with open(filename, encoding"utf-8") as f:
-        print(f.read(), end="")
+       print(f.read(), end="")
