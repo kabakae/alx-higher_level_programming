@@ -12,7 +12,7 @@ def print_stats(size, status_codes):
     Args:
         size (int): The accumulated read file size.
     """
-     print("File size: {}".format(size))
+    print("File size: {}".format(size))
     for key in sorted(status_codes):
         print("{}: {}".format(key, status_codes[key]))
 
