@@ -27,6 +27,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
@@ -37,6 +38,7 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return"[]"
         return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of list of objects to a file.
@@ -50,6 +52,7 @@ class Base:
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
+
                 @staticmethod
                 def from_json_string(json_string):
                     """Return the deserialization of a JSON string.
@@ -92,21 +95,23 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-    
+
     @staticmethod
     def from_json_string(json_string):
         """Converts a JSON string representation to a Python object."""
         import json
         return json.loads(json_string)
+
     @staticmethod
     def from_json_string(json_string):
         """Converts a JSON string representation to a Python object."""
         import json
-        
+
         if json_string is None:
             return []
-        
+
         return json.loads(json_string)
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
@@ -191,5 +196,3 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-
-
