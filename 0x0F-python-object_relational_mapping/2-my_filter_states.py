@@ -7,7 +7,7 @@ import MySQLdb
 
 if __name__ == "__main__":
     # Get MySQL.credential
-    # and connect to 
+    # and connect to
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
 
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     c.execute("SELECT * \
             FROM states \
             WHERE BINARY name = '{}'".format(sys.argv[4]))
-    # Fetch all 
+    # Fetch all
     [print(state) for state in c.fetchall()]
