@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # connect to MySQL server
     c = db.cursor()
 
-    # Execute the SQL 
+    # Execute the SQL
     c.execute("SELECT c.id, c.name, s.name \
                  FROM cities as c \
                 INNER JOIN states as s \
