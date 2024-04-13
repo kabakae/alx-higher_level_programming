@@ -13,9 +13,9 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     state_name = sys.argv[4]
 
-    # Connect to the 
+    # Connect to the
     db = MySQLdb.connect(
-            host= 'localhost',
+            host='localhost',
             port=3306,
             user=mysql_username,
             passwd=mysql_password,
@@ -23,10 +23,9 @@ if __name__ == "__main__":
     )
     # Create a cursor
     cursor = db.cursor()
-    # prepare the 
+    # prepare the
     sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(sql_query, (state_name,))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-            
