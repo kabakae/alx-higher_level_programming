@@ -14,7 +14,7 @@ if __name__ == "__main__":
     c.execute("SELECT c.id, c.name, s.name \
                  FROM cities as c \
                 INNER JOIN states as s \
-                   ON c.states_id = s.id \
+                   ON c.state_id = s.id \
                 ORDER BY c.id")
     # Fetch all rows and print the states
     [print(city) for city in c.fetchall()]
