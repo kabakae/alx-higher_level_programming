@@ -17,4 +17,5 @@ if __name__ == "__main__":
 
     # Retrieve all states from
     for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+        if "a" in state.name:
+            print("{}: {}".format(state.id, state.name))
