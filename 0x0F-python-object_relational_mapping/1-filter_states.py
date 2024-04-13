@@ -4,8 +4,8 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    #Get MySQL credentials
-    #Connect to my MySQL server
+    # Get MySQL credentials
+    # Connect to my MySQL server
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
 
