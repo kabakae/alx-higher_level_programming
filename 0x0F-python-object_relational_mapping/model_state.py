@@ -13,6 +13,6 @@ class State(Base):
     __tablename__ (str): The name of the MySQL tables to store states.
     id (sqlalchemy.integer): The state's id.
     name (sqlalchemy.String): The state's name."""
-    __tablename__ = "state"
+    __tablename__ = "states"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
