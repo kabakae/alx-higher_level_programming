@@ -14,9 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    # Retrive the state with id
-    state = session.query(State).filter_by(id=2).first()
-    # update name of the state
-    state.name = "New Mexico"
-    # Commit the session
+    # Retrieve all states
+    for state in session.query(State):
+        if "a" in state.name:
+            session.delete(state)
     session.commit()
