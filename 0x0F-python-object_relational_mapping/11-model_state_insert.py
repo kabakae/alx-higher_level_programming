@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     session = Session()
 
-    # Create a new State object for 
+    # Create a new State object for
     louisiana = State(name="Louisiana")
     # Add new state for session
     session.add(louisiana)
-    # Commit the session to 
+    # Commit the session to
     session.commit()
     # print the ID of the newly added state
     print(louisiana.id)
