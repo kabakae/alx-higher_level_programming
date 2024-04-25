@@ -8,23 +8,10 @@ fi
 
 URL=$1
 
-# Send request and get the response body
-RESPONSE=$(curl -sI "$URL")
-STATUS_CODE=$(echo "$RESPONSE" | head -n 1 | awk '{print $2}')
-
-# Check if the request was successful (status code 200)
-if [ -z "$STATUS_CODE" ]; then
-    echo "Error: No response received"
-    exit 1
-elif [ "$STATUS_CODE" != "200" ]; then
-    echo "Error: Request failed with status code $STATUS_CODE"
-    exit 1
-fi
-
-# Extract size from response headers
-SIZE=$(echo "$RESPONSE" | awk '/Content-Length/ {print $2}')
+# Send request and get the response body size in bytes
+SIZE=$(curl -s "$URL" | wc -c)
 if [ -z "$SIZE" ]; then
-    echo "Error: Content-Length not found in the response headers"
+    echo "Error: Size of the response body could not be determined"
     exit 1
 fi
 
