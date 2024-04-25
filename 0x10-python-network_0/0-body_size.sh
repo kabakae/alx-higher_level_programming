@@ -12,7 +12,7 @@ fi
 url=$1
 
 # Send a request to the URL using curl with silent mode and get the size of the response body
-response=$(curl -s -w "%{size_download}" -o /dev/null "$url")
+response=$(curl -s -w "%{size_download}" -o /dev/null "$1")
 
 # Display the size of the response body in bytes
 echo "$response"
