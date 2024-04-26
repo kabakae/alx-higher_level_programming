@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 """
-Sends a request to the provided URL and displays the body of the response (decoded in utf-8).
+Sends a request to the provided URL and displays the body of the response (de.
 
-This script takes in a URL as a command-line argument. It then sends a request using urllib.request.urlopen() to the provided URL and displays the body of the response decoded in utf-8. If an HTTPError occurs, it prints the error code.
+This script takes in a URL as a command-line argument. It then sends a request
 
 Example:
     $ python3 script_name.py https://example.com
