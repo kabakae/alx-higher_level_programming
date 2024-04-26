@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 """
-Sends a request to the provided URL and displays the value of the X-Request-Id variable found in the header of the response.
+Sends a request to the provided URL and displays the value of the X-Request-Id
 
-This script takes in a URL, sends a request using urllib.request.urlopen(), and displays the value of the X-Request-Id variable found in the header of the response.
+This script takes in a URL, sends a request using urllib.request.urlopen(), an
 
 Example:
     $ python3 script_name.py https://example.com
@@ -25,4 +25,3 @@ try:
             print(request_id)
 except urllib.error.URLError as e:
     print("Error fetching URL:", e)
-
