@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 """
-Sends a POST request to the provided URL with the email as a parameter dy of t
+Sends a POST request to the provided URL with the email as a parameter and dis
 
-This script takes in a URL and an email as command-line arguments. It then se
+This script takes in a URL and an email as commanutf-8.
 
 Example:
-    $ python3 script_name.py https://example.com/email your_email@example.com
+    $ python3 script_name.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 """
 
 import urllib.request
