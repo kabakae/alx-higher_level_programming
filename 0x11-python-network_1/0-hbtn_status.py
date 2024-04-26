@@ -3,7 +3,7 @@
 """
 Fetches the status of https://alx-intranet.hbtn.io/status using urllib.
 
-This script sends a GET request to the provided URL using urllib.request.urlopen().
+This script sends a GET request to the provided URL using urllib.request.n().
 It then reads the response body and prints it out with specified formatting.
 
 Example:
