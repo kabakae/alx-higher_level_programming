@@ -6,7 +6,7 @@ Sends a POST request to the provided URL with the email as a parameter and dis
 This script takes in a URL and an email as commanutf-8.
 
 Example:
-    $ python3 script_name.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
+    $ python3 script_name.py http://0.0.0.0:5000/post_email hr@holbertonschoom
 """
 
 import urllib.request
