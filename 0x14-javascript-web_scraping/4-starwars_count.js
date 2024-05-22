@@ -26,7 +26,13 @@ request(apiUrl, (error, response, body) => {
     console.error(`Error: Status code ${response.statusCode}`);
     return;
   }
-  const films = JSON.parse(body).results;
+  let films;
+  try {
+    films = JSON.parse(body).results;
+  } catch (parseError) {
+    console.error('Error: Failed to parse response body as JSON');
+    return;
+  }
   const filmsWithWedgeAntilles = films.filter(film =>
     film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
   );
