@@ -14,7 +14,7 @@ const filePath = process.argv[2];
 const fileContent = process.argv[3];
 
 if (!filePath || !fileContent) {
-  console.error('Usage: ./1-writeme.js <file_path> <file_content>');
+  console.error('Usage: ./1-writeme.js <file_path> "<file_content>"');
   process.exit(1);
 }
 
