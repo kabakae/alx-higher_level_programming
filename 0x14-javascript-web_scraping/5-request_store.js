@@ -4,10 +4,10 @@ This script gets the contents of a webpage and stores it in a file.
 The first argument is the URL to request.
 The second argument is the file path to store the body response.
 The file must be UTF-8 encoded.
-You must use the module axios.
+You must use the https module.
 */
 
-const axios = require('axios');
+const https = require('https');
 const fs = require('fs');
 const process = require('process');
 
@@ -19,20 +19,26 @@ if (!url || !filePath) {
   process.exit(1);
 }
 
-axios.get(url)
-  .then(response => {
-    fs.writeFile(filePath, response.data, 'utf8', (err) => {
+https.get(url, (res) => {
+  const { statusCode } = res;
+  if (statusCode !== 200) {
+    console.error(`Error: Status code ${statusCode}`);
+    res.resume();
+    return;
+  }
+
+  let rawData = '';
+  res.setEncoding('utf8');
+  res.on('data', (chunk) => { rawData += chunk; });
+  res.on('end', () => {
+    fs.writeFile(filePath, rawData, 'utf8', (err) => {
       if (err) {
         console.error('Error writing file:', err);
         return;
       }
       console.log(`File ${filePath} saved with contents from ${url}`);
     });
-  })
-  .catch(error => {
-    if (error.response) {
-      console.error(`Error: Status code ${error.response.status}`);
-    } else {
-      console.error('Error:', error.message);
-    }
   });
+}).on('error', (e) => {
+  console.error('Error:', e.message);
+});
